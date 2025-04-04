@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import africaImg from "@/assets/hero.jpg"
 import Layout from '@/components/Layout';
+import { topics } from '@/data/topicsData';
 
 
 const ArticlePage= () => {
