@@ -97,16 +97,16 @@ function renderDetailsSection(topic) {
   if (!details) return null;
   
   return (
-    <div className="mt-12">
-      {renderListSection(details.highlights || details.keyFacts || details.keyHighlights, "Key Facts & Highlights", "bg-blue-50")}
-      {renderListSection(details.implications || details.impact || details.keyConsiderations, "Implications & Considerations", "bg-gray-50")}
-      {renderListSection(details.businessOpportunities || details.strategicBusinessOpportunities, "Business Opportunities", "bg-green-50")}
-      {renderListSection(details.callToAction || details.actionPoints, "Call to Action", "bg-amber-50")}
-      {renderListSection(details.significantAdvances, "Significant Advances", "bg-purple-50")}
-      {renderListSection(details.criticalPathways, "Critical Pathways", "bg-indigo-50")}
-      {renderListSection(details.navigatingThePolycrisis, "Navigating the Polycrisis", "bg-teal-50")}
-      {renderListSection(details.strategicImportance, "Strategic Importance", "bg-cyan-50")}
-      {renderListSection(details.pathwaysOut, "Pathways Out", "bg-red-50")}
+    <div className="mt-4">
+      {renderListSection(details.highlights || details.keyFacts || details.keyHighlights, "Key Facts & Highlights", "bg-white")}
+      {renderListSection(details.implications || details.impact || details.keyConsiderations, "Implications & Considerations", "bg-white")}
+      {renderListSection(details.businessOpportunities || details.strategicBusinessOpportunities, "Business Opportunities", "bg-white")}
+      {renderListSection(details.callToAction || details.actionPoints, "Call to Action", "bg-white")}
+      {renderListSection(details.significantAdvances, "Significant Advances", "bg-white")}
+      {renderListSection(details.criticalPathways, "Critical Pathways", "bg-white")}
+      {renderListSection(details.navigatingThePolycrisis, "Navigating the Polycrisis", "bg-white")}
+      {renderListSection(details.strategicImportance, "Strategic Importance", "bg-white")}
+      {renderListSection(details.pathwaysOut, "Pathways Out", "bg-white")}
     </div>
   );
 }
@@ -117,7 +117,7 @@ function renderListSection(items, title, bgColor) {
   
   return (
     <motion.div 
-      className={`p-6 rounded-lg mb-8 ${bgColor} shadow-sm`}
+      className={`p-2 rounded-lg mb-8 ${bgColor} shadow-sm`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

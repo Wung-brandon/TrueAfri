@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import africaImg from "@/assets/10951.jpg"
+import africaImg from "@/assets/hero.jpg"
 
 
 const Hero = () => {
