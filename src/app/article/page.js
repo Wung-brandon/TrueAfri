@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import africaImg from "@/assets/hero.jpg"
+import africaImg from "@/assets/10951.jpg"
 import Layout from '@/components/Layout';
 import { topics } from '@/data/topicsData';
 
