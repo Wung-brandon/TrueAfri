@@ -117,12 +117,12 @@ function renderListSection(items, title, bgColor) {
   
   return (
     <motion.div 
-      className={`p-6 rounded-lg mb-8 ${bgColor}`}
+      className={`p-6 rounded-lg mb-8 ${bgColor} shadow-sm`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
+      <h3 className="text-xl font-bold mb-4 text-gray-800">{title}</h3>
       <ul className="space-y-3">
         {items.map((item, index) => (
           <motion.li 
@@ -132,8 +132,8 @@ function renderListSection(items, title, bgColor) {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3, delay: 0.1 * index }}
           >
-            <span className="text-blue-600 font-bold mr-2">•</span>
-            <span>{item}</span>
+            <span className="text-blue-600 font-bold mr-2 flex-shrink-0">•</span>
+            <span className="text-gray-700">{item}</span>
           </motion.li>
         ))}
       </ul>
