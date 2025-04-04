@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,6 +57,33 @@ const Header = () => {
     { href: "/article", label: "Article" },
     { href: "/#known", label: "Known" },
     { href: "/#hidden", label: "Hidden" }
+  ];
+
+  // Social media items with links
+  const socialMedia = [
+    { 
+      href: "https://www.facebook.com/profile.php?id=61574483563524", 
+      label: "Facebook",
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+    },
+    { 
+      href: "https://www.instagram.com/rltrueafrica/", 
+      label: "Instagram",
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+    },
+    { 
+      href: "https://x.com/RLTrueAfrica", 
+      label: "Twitter",
+      icon: <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+            </svg>
+    }
   ];
 
   // Animations
@@ -121,14 +147,6 @@ const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-4 py-4 md:py-3 flex justify-between items-center">
-      {/* <Image 
-          src={africaMap} 
-          alt="Africa" 
-          className="object-cover w-50" // Maintain aspect ratio
-          priority // Load the image with high priority
-        /> */}
-
-        
         <Link href="/" className="flex items-center z-20" onClick={closeMenu}>
           <span className="text-xl font-bold text-white tracking-tight">
             True<span className="text-amber-300">Africa</span>
@@ -147,6 +165,8 @@ const Header = () => {
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-amber-300 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
+          
+          
         </nav>
 
         {/* Hamburger Menu */}
@@ -208,25 +228,23 @@ const Header = () => {
               className="absolute bottom-16 text-amber-200 text-center"
               variants={itemVariants}
             >
-              <p className="mb-2">Discover the real Africa</p>
-              <div className="flex space-x-4 justify-center">
-                <span className="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                </span>
-                <span className="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                </span>
-                <span className="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                  </svg>
-                </span>
+              <p className="mb-4 text-lg font-medium">Discover the real Africa</p>
+              <div className="flex space-x-5 justify-center">
+                {socialMedia.map((item) => (
+                  <Link 
+                    key={item.label}
+                    href={item.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label={item.label}
+                    className="w-10 h-10 rounded-full bg-amber-600 hover:bg-amber-500 
+                              flex items-center justify-center transition-colors duration-300 
+                              text-white shadow-md hover:scale-110 transform"
+                  >
+                    {item.icon}
+                    <span className="sr-only">{item.label}</span>
+                  </Link>
+                ))}
               </div>
             </motion.div>
           </motion.div>

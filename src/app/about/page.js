@@ -104,7 +104,7 @@ const AboutPage = () => {
                   <div className="flex items-center">
                     <span className="text-amber-600 font-medium mr-2">Tel:</span>
                     <div>
-                      <p>+46 739 397 478 or +45 9146 1372</p> 
+                      <p className='text-gray-700'>+46 739 397 478 or +45 9146 1372</p> 
                       
                     </div>
                   </div>
