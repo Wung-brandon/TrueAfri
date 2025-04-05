@@ -197,12 +197,12 @@ const Home = () => {
               Beyond the stereotypes lies a continent of immense potential and opportunity.
               Join us in uncovering Africa&apos;s true story.
             </p>
-            <button className="px-8 py-3 bg-white text-amber-800 hover:bg-gray-100 font-medium 
+            {/* <button className="px-8 py-3 bg-white text-amber-800 hover:bg-gray-100 font-medium 
               rounded-full transition-colors duration-300 cursor-pointer"
               onClick={()=> router.push('/article')}
             >
               View Complete Article
-            </button>
+            </button> */}
           </motion.div>
         </div>
       </section>
